@@ -1,79 +1,82 @@
-import styled from "styled-components";
-import logoUrl from "../../assets/icons/skuniv_icon.png";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { getProducts } from "../../utils/productStore";
+// import styled from "styled-components";
+// import logoUrl from "../../assets/icons/skuniv_icon.png";
 
-const HeaderContainer = styled.header`
-  width: min(1280px, calc(100vw - 48px));z
-  margin: 0 auto;
-  padding: 42px 112px 20px;
+// import styled from "styled-components";
+// import { Link } from "react-router-dom";
+// import logoUrl from "../../assets/icons/skuniv_icon.png";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import logoUrl from "../../assets/icons/skuniv_icon.png";
+
+const HeaderBox = styled.header`
+  width: 100%;
+  height: 50px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+`;
+
+const LogoArea = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  text-decoration: none;
+  border-right: 1px solid #e5e7eb;
+  flex-shrink: 0;
 `;
 
 const LogoImage = styled.img`
-  width: 125px;
-  height: auto;
-  cursor: pointer;
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
 `;
 
-const HeaderRight = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 26px;
+const LogoTitle = styled.span`
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  white-space: nowrap;
 `;
 
 const Nav = styled.nav`
   display: flex;
-  gap: 28px;
-  align-items: center;
+  align-items: stretch;
+  margin-left: auto;
 `;
 
-const NavButton = styled.button`
-  border: none;
-  background: transparent;
-  padding: 0;
-  color: ${({ $active }) => ($active ? "#111" : "#6c6c6c")};
+const NavItem = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  text-decoration: none;
   font-size: 13px;
-  font-weight: ${({ $active }) => ($active ? 700 : 400)};
-  cursor: pointer;
+  font-weight: 500;
+  color: #374151;
+  border-left: 1px solid #e5e7eb;
+  white-space: nowrap;
 
   &:hover {
-    color: #111;
+    background-color: #f9fafb;
   }
 `;
 
-const HomeButton = styled.button`
-  border: none;
-  background: transparent;
-  color: #222;
-  font-size: 21px;
-  font-weight: 400;
-  cursor: pointer;
-`;
-
-export default function Header() {
-  const { pathname } = useLocation();
-  const { id } = useParams();
-  const navigate = useNavigate();
-
-  const fallbackId = getProducts()[0]?.id ?? 1;
-  const currentId = id ?? fallbackId;
-
+function Header() {
   return (
-    <HeaderContainer>
-      <LogoImage src={logoUrl} alt="skuniv" onClick={() => navigate("/")} />
-      <HeaderRight>
-        <Nav>
-          <NavButton $active={pathname === "/add"} onClick={() => navigate("/add")}>지원하기</NavButton>
-          <NavButton $active={pathname.startsWith("/project")} onClick={() => navigate(`/delete/${currentId}`)}>프로젝트</NavButton>
-          <NavButton $active={pathname.startsWith("/edit")} onClick={() => navigate(`/edit/${currentId}`)}>구성원</NavButton>
-          <NavButton $active={pathname.startsWith("/login")} onClick={() => navigate(`/edit/${currentId}`)}>로그인/회원가입</NavButton>
-        </Nav>
-        <HomeButton onClick={() => navigate("/")}>HOME</HomeButton>
-      </HeaderRight>
-    </HeaderContainer>
+    <HeaderBox>
+      <LogoArea to="/">
+        <LogoImage src={logoUrl} alt="서경대학교 로고" />
+        <LogoTitle>멋쟁이사자처럼 서경대학교</LogoTitle>
+      </LogoArea>
+      <Nav>
+        <NavItem to="#">지원하기</NavItem>
+        <NavItem to="#">프로젝트</NavItem>
+        <NavItem to="/">구성원</NavItem>
+        <NavItem to="#">로그인/회원가입</NavItem>
+      </Nav>
+    </HeaderBox>
   );
 }
+
+export default Header;
