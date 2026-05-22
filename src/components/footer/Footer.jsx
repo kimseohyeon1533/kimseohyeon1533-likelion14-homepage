@@ -1,40 +1,47 @@
-//import styled from "styled-components";
-// import styled from "styled-components";
 import styled from "styled-components";
+import footerLeftImg from "../../assets/images/footer.png";
+import footerRightImg from "../../assets/images/SKON.png";
 
 const FooterBox = styled.footer`
   width: 100%;
-  padding: 20px 40px;
+  padding: 24px 40px;
   box-sizing: border-box;
-  background-color: #111111;
-  color: #ffffff;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
-const FooterTitle = styled.p`
-  margin: 0;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+const FooterLeft = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const FooterSub = styled.p`
-  margin: 4px 0 0;
-  font-size: 10px;
-  color: #9ca3af;
+const FooterLeftImg = styled.img`
+  height: 40px;
+  object-fit: contain;
+`;
+
+const FooterRight = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const FooterRightImg = styled.img`
+  height: 40px;
+  object-fit: contain;
 `;
 
 function Footer() {
   return (
     <FooterBox>
-      <div>
-        <FooterTitle>⚡ SKU LIKELION. ALL RIGHTS RESERVED.</FooterTitle>
-        <FooterSub>
-          Seokyeong University, 124 Seokyeong-ro, Seongbuk-gu, Seoul, 02726, Republic of Korea
-        </FooterSub>
-      </div>
+      <FooterLeft>
+        <FooterLeftImg src={footerLeftImg} alt="footer left" />
+      </FooterLeft>
+      <FooterRight>
+        <FooterRightImg src={footerRightImg} alt="footer right" />
+      </FooterRight>
     </FooterBox>
   );
 }

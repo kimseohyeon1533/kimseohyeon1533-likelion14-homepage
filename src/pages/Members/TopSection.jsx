@@ -2,39 +2,43 @@ import styled from "styled-components";
 import Button from "./Button";
 
 const Section = styled.div`
-  padding: 28px 40px 0;
+  padding: 32px 40px 0;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const TitleBox = styled.div`
-  display: inline-block;
-  border: 1.5px solid #111111;
-  padding: 4px 14px;
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px solid #222222;
+  padding: 5px 14px;
   border-radius: 3px;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 `;
 
 const Title = styled.h2`
   margin: 0;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   color: #111111;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const SubText = styled.p`
-  margin: 0 0 16px;
+  margin: 0 0 18px;
   font-size: 12px;
-  color: #6b7280;
+  color: #888880;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const ButtonRow = styled.div`
   display: flex;
   gap: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 `;
 
 const Divider = styled.hr`
   border: none;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #ddddd0;
   margin: 0;
 `;
 

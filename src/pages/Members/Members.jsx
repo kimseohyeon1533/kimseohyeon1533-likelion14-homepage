@@ -10,7 +10,8 @@ const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #fafaf5;
+  background-color: #f5f5eb;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const Content = styled.main`
@@ -19,21 +20,24 @@ const Content = styled.main`
 `;
 
 const SectionBlock = styled.div`
-  padding: 32px 40px 0;
+  padding: 36px 40px 0;
 `;
 
 const SectionTitle = styled.h3`
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 800;
   color: #111111;
-  margin: 0 0 20px;
+  margin: 0 0 22px;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
-/* 대표/부대표 나란히 */
+/* 대표/부대표: 왼쪽 정렬, 붙어있게 */
 const LeaderRow = styled.div`
   display: flex;
-  gap: 40px;
-  margin-bottom: 28px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 32px;
+  margin-bottom: 32px;
 `;
 
 const RoleGroup = styled.div``;
@@ -41,18 +45,19 @@ const RoleGroup = styled.div``;
 const RoleLabel = styled.p`
   font-size: 12px;
   font-weight: 600;
-  color: #374151;
+  color: #333330;
   margin: 0 0 10px;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
-const CardRow = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+const CardGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
   gap: 10px;
 `;
 
 const RoleSection = styled.div`
-  margin-bottom: 28px;
+  margin-bottom: 32px;
 `;
 
 const dataMap = {
@@ -76,57 +81,40 @@ function Members() {
         <SectionBlock>
           <SectionTitle>운영진</SectionTitle>
 
-          {/* 대표 / 부대표 */}
           <LeaderRow>
             <RoleGroup>
               <RoleLabel>대표</RoleLabel>
-              <CardRow>
+              <CardGrid>
                 {d.운영진.대표.map((m, i) => <InfoBox key={i} {...m} />)}
-              </CardRow>
+              </CardGrid>
             </RoleGroup>
             <RoleGroup>
               <RoleLabel>부대표</RoleLabel>
-              <CardRow>
+              <CardGrid>
                 {d.운영진.부대표.map((m, i) => <InfoBox key={i} {...m} />)}
-              </CardRow>
+              </CardGrid>
             </RoleGroup>
           </LeaderRow>
 
-          {/* PO */}
-          <RoleSection>
-            <RoleLabel>PO</RoleLabel>
-            <CardRow>
-              {d.운영진.PO.map((m, i) => <InfoBox key={i} {...m} />)}
-            </CardRow>
-          </RoleSection>
-
-          {/* FRONTEND */}
-          <RoleSection>
-            <RoleLabel>FRONTEND</RoleLabel>
-            <CardRow>
-              {d.운영진.FRONTEND.map((m, i) => <InfoBox key={i} {...m} />)}
-            </CardRow>
-          </RoleSection>
-
-          {/* BACKEND */}
-          <RoleSection>
-            <RoleLabel>BACKEND</RoleLabel>
-            <CardRow>
-              {d.운영진.BACKEND.map((m, i) => <InfoBox key={i} {...m} />)}
-            </CardRow>
-          </RoleSection>
+          {["PO", "FRONTEND", "BACKEND"].map((role) => (
+            <RoleSection key={role}>
+              <RoleLabel>{role}</RoleLabel>
+              <CardGrid>
+                {d.운영진[role].map((m, i) => <InfoBox key={i} {...m} />)}
+              </CardGrid>
+            </RoleSection>
+          ))}
         </SectionBlock>
 
         {/* 아기사자 */}
         <SectionBlock>
           <SectionTitle>아기사자</SectionTitle>
-
           {["PO", "FRONTEND", "BACKEND"].map((role) => (
             <RoleSection key={role}>
               <RoleLabel>{role}</RoleLabel>
-              <CardRow>
+              <CardGrid>
                 {d.아기사자[role].map((m, i) => <InfoBox key={i} {...m} />)}
-              </CardRow>
+              </CardGrid>
             </RoleSection>
           ))}
         </SectionBlock>

@@ -4,17 +4,21 @@
 // import styled from "styled-components";
 // import { Link } from "react-router-dom";
 // import logoUrl from "../../assets/icons/skuniv_icon.png";
+// import styled from "styled-components";
+// import { Link } from "react-router-dom";
+// import logoUrl from "../../assets/icons/skuniv_icon.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logoUrl from "../../assets/icons/skuniv_icon.png";
 
 const HeaderBox = styled.header`
   width: 100%;
-  height: 50px;
+  height: 52px;
   display: flex;
   align-items: stretch;
   background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e0e0d8;
+  font-family: 'Noto Sans KR', sans-serif;
 `;
 
 const LogoArea = styled(Link)`
@@ -23,7 +27,7 @@ const LogoArea = styled(Link)`
   gap: 8px;
   padding: 0 20px;
   text-decoration: none;
-  border-right: 1px solid #e5e7eb;
+  border-right: 1px solid #e0e0d8;
   flex-shrink: 0;
 `;
 
@@ -40,25 +44,30 @@ const LogoTitle = styled.span`
   white-space: nowrap;
 `;
 
+const Spacer = styled.div`
+  flex: 1;
+  border-right: 1px solid #e0e0d8;
+`;
+
 const Nav = styled.nav`
   display: flex;
   align-items: stretch;
-  margin-left: auto;
 `;
 
 const NavItem = styled(Link)`
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 24px;
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
-  color: #374151;
-  border-left: 1px solid #e5e7eb;
+  color: #222222;
+  border-right: 1px solid #e0e0d8;
   white-space: nowrap;
+  font-family: 'Noto Sans KR', sans-serif;
 
   &:hover {
-    background-color: #f9fafb;
+    background-color: #f5f5eb;
   }
 `;
 
@@ -69,6 +78,7 @@ function Header() {
         <LogoImage src={logoUrl} alt="서경대학교 로고" />
         <LogoTitle>멋쟁이사자처럼 서경대학교</LogoTitle>
       </LogoArea>
+      <Spacer />
       <Nav>
         <NavItem to="#">지원하기</NavItem>
         <NavItem to="#">프로젝트</NavItem>
