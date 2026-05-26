@@ -17,7 +17,7 @@ const HeaderBox = styled.header`
   display: flex;
   align-items: stretch;
   background-color: #ffffff;
-  border-bottom: 1px solid #e0e0d8;
+  border-bottom: 1.3px solid #000000;
   font-family: 'Noto Sans KR', sans-serif;
 `;
 
@@ -27,7 +27,7 @@ const LogoArea = styled(Link)`
   gap: 8px;
   padding: 0 20px;
   text-decoration: none;
-  border-right: 1px solid #e0e0d8;
+  border-right: 1.3px solid #000000;
   flex-shrink: 0;
 `;
 
@@ -46,7 +46,6 @@ const LogoTitle = styled.span`
 
 const Spacer = styled.div`
   flex: 1;
-  border-right: 1px solid #e0e0d8;
 `;
 
 const Nav = styled.nav`
@@ -62,13 +61,22 @@ const NavItem = styled(Link)`
   font-size: 13px;
   font-weight: 500;
   color: #222222;
-  border-right: 1px solid #e0e0d8;
   white-space: nowrap;
   font-family: 'Noto Sans KR', sans-serif;
 
   &:hover {
     background-color: #f5f5eb;
   }
+`;
+
+/* 지원하기만 왼쪽 선 */
+const FirstNavItem = styled(NavItem)`
+  border-left: 1.3px solid #000000;
+`;
+
+/* 로그인/회원가입만 왼쪽 선 */
+const LoginNavItem = styled(NavItem)`
+  border-left: 1.3px solid #000000;
 `;
 
 function Header() {
@@ -78,12 +86,14 @@ function Header() {
         <LogoImage src={logoUrl} alt="서경대학교 로고" />
         <LogoTitle>멋쟁이사자처럼 서경대학교</LogoTitle>
       </LogoArea>
+
       <Spacer />
+
       <Nav>
-        <NavItem to="#">지원하기</NavItem>
+        <FirstNavItem to="#">지원하기</FirstNavItem>
         <NavItem to="#">프로젝트</NavItem>
         <NavItem to="/">구성원</NavItem>
-        <NavItem to="#">로그인/회원가입</NavItem>
+        <LoginNavItem to="#">로그인/회원가입</LoginNavItem>
       </Nav>
     </HeaderBox>
   );
