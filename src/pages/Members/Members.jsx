@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 
 /* 공통 컴포넌트 */
-import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
 /* 현재 페이지 전용 컴포넌트 */
@@ -148,9 +147,6 @@ function Members() {
       <EyeIcon src={eyeIcon} alt="eye" />
       <EightIcon src={eightIcon} alt="8" />
       <CatIcon src={catIcon} alt="cat" />
-
-      {/* 헤더 */}
-      <Header />
 
       <Content>
 

@@ -7,6 +7,7 @@
 // import styled from "styled-components";
 // import { Link } from "react-router-dom";
 // import logoUrl from "../../assets/icons/skuniv_icon.png";
+
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import logoUrl from "../../assets/icons/skuniv_icon.png";
@@ -90,10 +91,21 @@ function Header() {
       <Spacer />
 
       <Nav>
-        <FirstNavItem to="#">지원하기</FirstNavItem>
-        <NavItem to="#">프로젝트</NavItem>
-        <NavItem to="/">구성원</NavItem>
-        <LoginNavItem to="#">로그인/회원가입</LoginNavItem>
+        <FirstNavItem to="/recruit">
+          지원하기
+        </FirstNavItem>
+
+        <NavItem to="/project">
+          프로젝트
+        </NavItem>
+
+        <NavItem to="/members">
+          구성원
+        </NavItem>
+
+        <LoginNavItem to="/login">
+          로그인/회원가입
+        </LoginNavItem>
       </Nav>
     </HeaderBox>
   );
