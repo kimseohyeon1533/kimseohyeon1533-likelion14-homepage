@@ -19,27 +19,77 @@ const make = (count) =>
    14기 데이터
 ========================================================= */
 export const data14 = {
-
   운영진: {
+    대표: [
+      { name: "윤희준", info: "OO학과 24학번", img: null },
+    ],
 
-    /* 대표 */
-    대표: make(1),
+    부대표: [
+      { name: "임다현", info: "OO학과 24학번", img: null },
+    ],
 
-    /* 부대표 */
-    부대표: make(1),
+    PO: [
+      { name: "정영진", info: "OO학과 24학번", img: null },
+      { name: "김정현", info: "OO학과 24학번", img: null },
+      { name: "최운조", info: "OO학과 24학번", img: null },
+    ],
 
-    /* 파트별 운영진 */
-    PO: make(4),
-    FRONTEND: make(3),
-    BACKEND: make(3),
+    FRONTEND: [
+      { name: "심서현", info: "OO학과 24학번", img: null },
+      { name: "김현수", info: "OO학과 24학번", img: null },
+      { name: "정목진", info: "OO학과 24학번", img: null },
+    ],
+
+    BACKEND: [
+      { name: "금시언", info: "OO학과 24학번", img: null },
+      { name: "김나경", info: "OO학과 24학번", img: null },
+      { name: "신채린", info: "OO학과 24학번", img: null },
+    ],
   },
 
   아기사자: {
+    PO: [
+      { name: "강서연", info: "OO학과 24학번", img: null },
+      { name: "구나영", info: "OO학과 24학번", img: null },
+      { name: "박세은", info: "OO학과 24학번", img: null },
+      { name: "엄다영", info: "OO학과 24학번", img: null },
+      { name: "이정민", info: "OO학과 24학번", img: null },
+      { name: "조민서", info: "OO학과 24학번", img: null },
+      { name: "조재호", info: "OO학과 24학번", img: null },
+      { name: "한슬기", info: "OO학과 24학번", img: null },
+    ],
 
-    /* 파트별 아기사자 */
-    PO: make(7),
-    FRONTEND: make(12),
-    BACKEND: make(12),
+    FRONTEND: [
+      { name: "김민솔", info: "OO학과 24학번", img: null },
+      { name: "김서현", info: "OO학과 24학번", img: null },
+      { name: "김승민", info: "OO학과 24학번", img: null },
+      { name: "김우현", info: "OO학과 24학번", img: null },
+      { name: "김윤정", info: "OO학과 24학번", img: null },
+      { name: "백윤관", info: "OO학과 24학번", img: null },
+      { name: "양우석", info: "OO학과 24학번", img: null },
+      { name: "양희창", info: "OO학과 24학번", img: null },
+      { name: "장경무", info: "OO학과 24학번", img: null },
+      { name: "장서후", info: "OO학과 24학번", img: null },
+      { name: "정시훈", info: "OO학과 24학번", img: null },
+      { name: "최서연", info: "OO학과 24학번", img: null },
+      { name: "한주은", info: "OO학과 24학번", img: null },
+      { name: "홍윤지", info: "OO학과 24학번", img: null },
+    ],
+
+    BACKEND: [
+      { name: "김민호", info: "OO학과 24학번", img: null },
+      { name: "김정모", info: "OO학과 24학번", img: null },
+      { name: "김태현", info: "OO학과 24학번", img: null },
+      { name: "나형준", info: "OO학과 24학번", img: null },
+      { name: "남궁강", info: "OO학과 24학번", img: null },
+      { name: "오지우", info: "OO학과 24학번", img: null },
+      { name: "이정능", info: "OO학과 24학번", img: null },
+      { name: "이주희", info: "OO학과 24학번", img: null },
+      { name: "이충환", info: "OO학과 24학번", img: null },
+      { name: "조민호", info: "OO학과 24학번", img: null },
+      { name: "최아원", info: "OO학과 24학번", img: null },
+      { name: "최예윤", info: "OO학과 24학번", img: null },
+    ],
   },
 };
 
